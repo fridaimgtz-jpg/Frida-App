@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario - Fridas app</title>
+    <!-- Fuente moderna y elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos modernos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #faf8f9;
+            --card-bg: #ffffff;
+            --text-main: #2d2a2d;
+            --text-muted: #8a8287;
+            --primary-pink: #ffb5c2;
+            --light-pink: #fff0f3;
+            --table-header-bg: #f8ccd4;
+            --hover-pink: #ffe3e8;
+            --shadow: 0 10px 30px rgba(255, 181, 194, 0.15);
+            --border-radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* Botón de Regresar */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--text-main);
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tutor-badge {
+            display: inline-block;
+            background-color: var(--light-pink);
+            color: #d17585;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 181, 194, 0.3);
+        }
+
+        /* Contenedor de la Tabla */
+        .table-container {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 181, 194, 0.2);
+            overflow-x: auto;
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.9rem 0.6rem;
+            border: 1px solid #f2e6e8;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: #593940;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+        
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        /* Columna de hora */
+        td.time-col {
+            background-color: #fdfafb;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        /* Celdas de eventos especiales (Recreo / Recepción) */
+        td.special-row {
+            background-color: var(--light-pink);
+            color: #b86574;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        td:hover:not(.time-col):not(.special-row) {
+            background-color: var(--hover-pink);
+            transition: background-color 0.2s ease;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Diseño responsivo para celulares */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+            th, td {
+                padding: 0.6rem 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Enlace para volver al index -->
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+
+        <!-- Encabezado -->
+        <header>
+            <h1>HORARIO S2A</h1>
+            <div class="tutor-badge">
+                Tutor: Vicente Guerrero
+            </div>
+        </header>
+
+        <!-- Tabla del Horario -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">6:40 - 7:00</td>
+                        <td colspan="5" class="special-row">Recepción de alumnos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">7:00 - 7:45<br>7:45 - 8:30</td>
+                        <td>INGLÉS</td>
+                        <td>ARUKAY</td>
+                        <td>DISEÑO</td>
+                        <td>MATEMÁTICAS</td>
+                        <td>INGLÉS</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">8:30 - 9:15</td>
+                        <td>TUTORÍAS SOCIOEMOCIONAL</td>
+                        <td>ESPAÑOL</td>
+                        <td>FÍSICA</td>
+                        <td rowspan="2">ESPAÑOL</td>
+                        <td rowspan="2">EDUCACIÓN FÍSICA</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">9:15 - 10:00</td>
+                        <td>MATEMÁTICAS</td>
+                        <td>FRANCÉS</td>
+                        <td>FRANCÉS</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:00 - 10:30</td>
+                        <td colspan="5" class="special-row">Recreo</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:30 - 11:15</td>
+                        <td rowspan="2">MÚSICA</td>
+                        <td rowspan="2">FÍSICA</td>
+                        <td>MATEMÁTICAS</td>
+                        <td>INGLÉS</td>
+                        <td rowspan="2">ESPAÑOL</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:15 - 12:00</td>
+                        <td rowspan="2">ESPAÑOL</td>
+                        <td>HISTORIA</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">12:00 - 12:45</td>
+                        <td>FÍSICA</td>
+                        <td>INGLÉS</td>
+                        <td>CÍVICA Y ÉTICA</td>
+                        <td>FÍSICA</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">12:45 - 1:30<br>1:30 - 2:20</td>
+                        <td>HISTORIA</td>
+                        <td>MATEMÁTICAS</td>
+                        <td>INGLÉS</td>
+                        <td>ARTE</td>
+                        <td>CÍVICA Y ÉTICA<br><span style="font-size:0.75rem; color:var(--text-muted);">HISTORIA</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            Fridas app ✨ Tu espacio escolar
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridas app</title>
+    <!-- Fuente elegante y moderna de Google Fonts (Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Iconos modernos (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #faf8f9;
+            --card-bg: #ffffff;
+            --text-main: #2d2a2d;
+            --text-muted: #8a8287;
+            --primary-pink: #ffb5c2;
+            --light-pink: #fff0f3;
+            --hover-pink: #ffa3b4;
+            --shadow: 0 10px 30px rgba(255, 181, 194, 0.15);
+            --border-radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        /* Encabezado */
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .avatar-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-pink);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-pink);
+            font-size: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Contenedor de Botones / Enlaces */
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 181, 194, 0.2);
+            padding: 1.1rem 1.5rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-card i {
+            font-size: 1.2rem;
+            color: var(--primary-pink);
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-card .arrow {
+            margin-left: auto;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Efectos Hover elegantes */
+        .btn-card:hover {
+            background-color: var(--light-pink);
+            border-color: var(--primary-pink);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .btn-card:hover .arrow {
+            transform: translateX(4px);
+            color: var(--primary-pink);
+        }
+
+        /* Pie de página */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado de la App -->
+        <header>
+            <div class="avatar-placeholder">
+                <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <h1>Fridas app</h1>
+            <p class="subtitle">Bienvenida a tu espacio personal</p>
+        </header>
+
+        <!-- Botones de navegación -->
+        <div class="nav-links">
+            <!-- Botón 1: Horario -->
+            <a href="horario.html" class="btn-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Mi horario de clases</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Botón 2: Contraseñas -->
+            <a href="contrasenias.html" class="btn-card">
+                <i class="fa-solid fa-lock"></i>
+                <span>Contraseñas</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Botón 3: Clima -->
+            <a href="clima.html" class="btn-card">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <span>Clima</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Hecho con amor ✨ Fridas app
+        </footer>
+    </div>
+
+</body>
+</html>
